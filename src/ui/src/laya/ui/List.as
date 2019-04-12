@@ -632,8 +632,8 @@ package laya.ui {
 		protected function onScrollBarChange(e:Event = null):void {
 			runCallLater(changeCells);
 			var scrollValue:Number = _scrollBar.value;
-			var lineX:int = (_isVertical ? this.repeatX : this.repeatY);
-			var lineY:int = (_isVertical ? this.repeatY : this.repeatX);
+			var lineX:int = Math.floor(_isVertical ? this.repeatX : this.repeatY);
+			var lineY:int = Math.floor(_isVertical ? this.repeatY : this.repeatX);
 			var scrollLine:int = Math.floor(scrollValue / _cellSize);
 			
 			if (!cacheContent) {
